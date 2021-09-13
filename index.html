@@ -1,67 +1,447 @@
-<!doctype html>
+<!DOCTYPE html>
 <head>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.357.0.min.js"></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript">
+    <meta charset="utf-8">
+    <title>Coalition For National Fact Checking</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-        //Bucket Configurations
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/media-queries.css">
+    <!--    <link rel="stylesheet" href="css/magnific-popup.css">-->
+    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+    <!--    <link rel="stylesheet" href="css/fontawesome-free-5.15.4-web/css/fontawesome.min.css">-->
+    <link rel="stylesheet" href="css/index.css">
 
-        var bucketName = BUCKET_NAME;
-        var bucketRegion = BUCKET_REGION;
-        var IdentityPoolId = IDENTITY_POOL_ID;
-
-        AWS.config.update({
-            region: bucketRegion,
-            credentials: new AWS.CognitoIdentityCredentials({
-                IdentityPoolId: IdentityPoolId
-            })
-        });
-
-        var s3 = new AWS.S3({
-            apiVersion: '2006-03-01',
-            params: {Bucket: bucketName}
-        });
-    </script>
+    <link rel="shortcut icon" href="favicon.ico">
 </head>
-<body>
-<!-- A functional html code-->
-<div>
-    <input type="file" id="fileUpload">
+
+<body class="container">
+
+<header id="home" class="common-header">
+    <nav id="nav-wrap">
+        <ul id="nav" class="nav">
+            <li class="current" id="overview_link">
+                <a href="#overview" class="section_selector">Home</a>
+            </li>
+            <li id="draft_link"><a class="section_selector" href="#draft">Text of Draft Statute</a></li>
+            <li id="FirstDraft_link"><a class="section_selector" href="#FirstDraft">Constitutional Analysis of Draft
+                Statute</a></li>
+            <li id="Endorsements_link"><a class="section_selector" href="#Endorsements">Endorsements</a></li>
+            <li id="faq_link"><a class="section_selector" href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="section-container">
+    <section id="overview" class="section-body active-section">
+        <div class="row add-bottom overview">
+            <div class="row banner">
+                <div class="problem-statement">
+                    <h1 class="heading">Coalition For National Fact Checking</h1>
+                    <p>
+                        <b>The Problem: </b>
+                        The quality of democratic governance in the United States is deteriorating. Like termites eating
+                        away at the foundations of a house, electronic amplification of lies and misinformation is
+                        stealthily eroding the foundations of American democracy. Congress must act now to address the
+                        problem before it is too late. The First Amendment imposes significant constraints, but Congress
+                        can enact legislation that is constitutionally valid and that could significantly reduce the
+                        harm caused by electronic amplification of misinformation related to elections and public
+                        health.
+                    </p>
+                </div>
+                <div class="overview-container">
+                    <div class="quotes  overview-box pull-left">
+                        <aside class="pull-quote aside-pull-quotes">
+                            <blockquote class="personal-quotes">
+                                <p class="para-head">Disinformation is the New Nuclear Threat</p>
+                                <p class="para-quotes">
+
+                                    In my early career, I worked for the federal government on nuclear proliferation and
+                                    nuclear arms
+                                    control issues because I feared that nuclear weapons posed a threat to humanity and
+                                    I
+                                    wanted to help
+                                    mitigate that threat. For the past few years, I have devoted much of my time as a
+                                    scholar to
+                                    researching the problem of disinformation. Today, I fear that traditional tools of
+                                    disinformation,
+                                    combined with modern technologies for electronic amplification, pose a significant
+                                    threat to
+                                    democracy in the United States and elsewhere. I created the Coalition for a National
+                                    Fact-Checking
+                                    Institute to help mitigate that threat. I hope you agree that my proposed
+                                    legislation
+                                    would help
+                                    reduce the threat to democracy presented by the electronic amplification of
+                                    misinformation.
+                                </p>
+                            </blockquote>
+                        </aside>
+                    </div>
+                    <div class="overview-content ">
+                        <svg class="solution pull-left" id="Layer_1" data-name="Layer 1"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97.23 122.88">
+                            <defs>
+                                <style>.cls-1 {
+                                    fill-rule: evenodd;
+                                }</style>
+                            </defs>
+                            <title>solution</title>
+                            <path class="cls-1"
+                                  d="M38.06,25.35ZM17.29,112.22V81.61H31.07c5.87,1,11.68,4.19,17.52,7.88H59.28c4.85.29,7.38,5.2,2.68,8.42-3.75,2.76-8.68,2.6-13.78,2.15-3.5-.17-3.65,4.52,0,4.54,1.27.1,2.65-.2,3.85-.2,6.31,0,11.55-1.21,14.74-6.22l1.58-3.74,16-7.85c8-2.62,13.63,5.7,7.76,11.5a208.22,208.22,0,0,1-35.47,20.85c-8.78,5.34-17.57,5.16-26.33,0l-13-6.72ZM0,78.69H13.15V115.3H0V78.69ZM59.69,2.43A2.66,2.66,0,0,1,60.58.64,2.58,2.58,0,0,1,62.43,0h0l.18,0a2.61,2.61,0,0,1,2.27,2.72h0s0,.09,0,.13l-.38,5.54h0c0,.06,0,.12,0,.17a2.67,2.67,0,0,1-.87,1.64,2.59,2.59,0,0,1-1.85.63h0l-.18,0A2.57,2.57,0,0,1,60,10a2.6,2.6,0,0,1-.64-1.85h0a.53.53,0,0,1,0-.13l.37-5.56Zm-29,8.44a2.61,2.61,0,0,1,0-3.67,2.6,2.6,0,0,1,3.67,0l4,4.06a2.6,2.6,0,0,1,0,3.67,2.63,2.63,0,0,1-1.84.75,2.59,2.59,0,0,1-1.83-.77l-4-4.06Zm-8,28.27a2.6,2.6,0,0,1-2.53-2.63A2.58,2.58,0,0,1,22.74,34l5.68,0a2.58,2.58,0,0,1,1.83.79A2.54,2.54,0,0,1,31,36.64v0h0v.09a2.57,2.57,0,0,1-.77,1.69,2.62,2.62,0,0,1-1.85.74h-.1l-5.62-.06Zm71.87-4.9h.08a2.58,2.58,0,0,1,1.77.65,2.62,2.62,0,0,1,.87,1.79v0s0,.07,0,.08a2.58,2.58,0,0,1-.65,1.77,2.62,2.62,0,0,1-1.79.87l-5.67.35a2.6,2.6,0,0,1-.31-5.19c1.9-.12,3.8-.25,5.7-.35ZM84.32,11.16a2.58,2.58,0,0,1,3.62-.55h0a2.56,2.56,0,0,1,1,1.69,2.66,2.66,0,0,1-.48,1.93l-3.36,4.58a2.61,2.61,0,0,1-3.63.56,2.64,2.64,0,0,1-1-1.7A2.57,2.57,0,0,1,81,15.75l3.37-4.59ZM66.94,77.73a11.65,11.65,0,0,1-4.42,4.06,11.06,11.06,0,0,1-4.93,1.28,10,10,0,0,1-5-1.2,10.19,10.19,0,0,1-2.87-2.34l17.17-1.8Zm2-9.47,0,1.12v.38A16.13,16.13,0,0,1,68.9,72l-.41,1.6L47.68,75.73l-.32-.85-.67-3.34,0-1L69,68.26ZM50.18,39.52a7.47,7.47,0,0,1,2.58,1.68A19,19,0,0,1,54.44,43a69,69,0,0,1,5.83-7.4,49.41,49.41,0,0,1,6.11-5.86l.48-.16,5.23.23L71,30.91a92.54,92.54,0,0,0-8.41,9.93,114.35,114.35,0,0,0-8.37,12.38,32.81,32.81,0,0,0-4.32-7.61,22.65,22.65,0,0,0-5-5l5.24-1.12ZM38.28,25a23.85,23.85,0,0,1,5-5.44,22.52,22.52,0,0,1,6.55-3.66l.2-.06a23.81,23.81,0,0,1,5.47-1.2,25,25,0,0,1,5.93.12,25.73,25.73,0,0,1,10.77,4,24.25,24.25,0,0,1,5.61,5,22.23,22.23,0,0,1,3.62,6.41,24.9,24.9,0,0,1,1.08,4.08,23,23,0,0,1,.35,4.49v0a23.22,23.22,0,0,1-.61,5,25.8,25.8,0,0,1-1.68,4.86C79,52,76.43,55.24,73.9,58.43c-1.24,1.57-2.47,3.13-3.53,4.67a3.18,3.18,0,0,1-3,1.35l-18.7,1.94a3.18,3.18,0,0,1-3.38-2.29,27.52,27.52,0,0,0-1.58-4.16,16.72,16.72,0,0,0-1.9-3.12c-.9-1.12-1.82-2.27-2.74-3.64a27.63,27.63,0,0,1-2.61-4.8l-.06-.18a28.71,28.71,0,0,1-1.6-5.32,24.48,24.48,0,0,1-.39-5.74,24.11,24.11,0,0,1,1.05-5.88A28,28,0,0,1,38,25.41l0-.06.23-.35Z"/>
+                        </svg>
+                        <b class="solution-bold">The Proposed Solution:</b>
+                        Create an independent, non-governmental, non-profit organization called the National
+                        Fact-Checking Institute (NFCI), modelled on the National Endowment for Democracy. Like the
+                        Endowment, NFCI will not be an agency or instrumentality of the U.S. government. Also like the
+                        Endowment, though, NFCI’s activities will be regulated by a federal statute that provides
+                        significant congressional support for the organization. Whereas the Endowment helps promote
+                        democracy abroad, NFCI will help preserve the integrity of democratic governance at home by
+                        curbing the electronic amplification of misinformation related to elections and public health.
+
+                        <p class="overview-para">
+                            The statute, called the National Fact-Checking Institute Act, will regulate the private
+                            companies that provide electronic amplification services for individuals. Under the statute,
+                            those companies are known as “electronic megaphone companies,” or “EMCs.” EMCs include
+                            companies that provide electronic amplification services for messages transmitted via radio,
+                            television, social media, blogs, and podcasts. </p>
+                        <p class="overview-para">
+                            NFCI’s operations will be entirely consistent with the First Amendment because NFCI will not
+                            exercise any coercive power to restrict speech. Instead, NFCI will accomplish its mission
+                            by:
+                        <ul class="para-list">
+                            <li> Monitoring the public communications of “persons with large electronic megaphones”
+                                (also known as “PLEMs,” a statutorily defined term)
+                            </li>
+                            <li> Identifying public communications by PLEMs that present false or misleading claims
+                                related to elections and/or public health;
+                            </li>
+                            <li>Issuing warnings to PLEMs and to the EMCs that provide electronic amplification services
+                                for them;
+                            </li>
+                            <li> Encouraging, but not requiring, EMCs to reduce the electronic amplification of speech
+                                by PLEMs who repeatedly disseminate false or misleading claims after having received
+                                warnings; and
+                            </li>
+                            <li> Providing detailed reports to Congress, the Federal Communications Commission (FCC),
+                                and the public at large.
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                    <div class="overview-accomplish ">
+                        <p class="overview-para">
+                            <b class="solution-bold">What Would the Statute Accomplish?</b>
+                            The statute does not impose civil or criminal penalties on PLEMs who persistently
+                            disseminate false or misleading claims, nor does it impose any penalties on EMCs who
+                            continue to provide electronic amplification services for such PLEMs. Hence, skeptics may
+                            wonder whether the statute would actually reduce the harm caused by electronic amplification
+                            of misinformation related to elections and public health. Empirical research shows that, at
+                            least in some cases, “naming and shaming” governments that violate internationally accepted
+                            norms has a positive effect on their behavior. Similarly, by “naming and shaming” PLEMs and
+                            EMCs in its reports to Congress, NFCI would likely induce some PLEMs to refrain from
+                            spreading lies and misinformation, and it would likely induce some EMCs to curb the
+                            electronic amplification of PLEMs who continue to disseminate false and misleading claims.
+                        </p>
+                        <p class="overview-para">Moreover, the fact that the statute does not impose civil or criminal
+                            penalties on PLEMs or EMCs is a feature, not a bug. The absence of such penalties is a key
+                            feature that will help the statute survive constitutional scrutiny under the First
+                            Amendment. NFCI’s reports to Congress will provide a factual basis for Congress to
+                            determine—after the law has been implemented for a few years—whether a statutory scheme that
+                            relies primarily on naming and shaming provides a sufficiently strong remedy to protect
+                            American democracy. Congress might decide, based on NFCI’s reporting, that civil and/or
+                            criminal penalties are necessary to protect our democracy from the danger posed by
+                            electronic amplification of misinformation. In that case, an amended statute including such
+                            penalties would be much more likely to survive a First Amendment challenge because the
+                            government could argue that it tried less restrictive means (naming and shaming), but those
+                            less restrictive means did not achieve a significant reduction in the electronic
+                            amplification of lies and misinformation related to elections and public health.</p>
+                    </div>
+                </div>
+                <p class="link-msg">Click below to see</p>
+
+                <div class="links-section">
+                    <a href="#draft" class="section_selector button" target="_parent"> The text of the draft
+                        statute.</a>
+                    <a href="#FirstDraft" class="section_selector button">A constitutional analysis of the proposed
+                        statute.</a>
+                    <a href="#faq" class="section_selector button"> Answers to frequently asked questions</a>
+                </div>
+            </div>
+
+        </div> <!-- Row End-->
+
+    </section> <!-- overview Section End-->
+
+    <section id="draft" class="section-body">
+
+        <div class="row">
+
+            <div class="twelve columns">
+
+                <h1 class="heading">Text of Proposed Legislation</h1>
+                <b>This Act may be cited as the “National Fact-Checking Institute Act.”</b>
+                <img class="side-image pull-left" src="images/fakect.png" class="pull-left">
+                <p class="add-bottom">
+                    The purpose of this Act is to protect American democracy from the electronic amplification of
+                    dangerous lies and misinformation related to elections and public health. Since it would pose
+                    unacceptable risks to free speech to empower any executive branch agency or official to decide on a
+                    case-by-case basis whether a particular claim is true or false, the Act delegates that
+                    responsibility to an independent, non-governmental, nonprofit corporation known as the National
+                    Fact-Checking Institute (NFCI).s
+                </p>
+            </div>
+        </div> <!-- Row End-->
+        <div class="row columns link-container">
+            <a href="https://docs.google.com/uc?export=download&id=13-6XVlfy-UEBPAwUd_O6jOtxWt1Tt_Wj" download>Complete
+                text of proposed legislation in PDF Format
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf"
+                     class="svg-inline--fa fa-file-pdf fa-w-12" role="img" viewBox="0 0 384 512">
+                    <path fill="currentColor"
+                          d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path>
+                </svg>
+            </a>
+            <a href="https://docs.google.com/uc?export=download&id=11xRmCgnYUpX4GaUMI3C-Pfw8tOv1CMGV"
+               download>Complete text of proposed legislation in word Format
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-word"
+                     class="svg-inline--fa fa-file-word fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 384 512">
+                    <path fill="currentColor"
+                          d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm220.1-208c-5.7 0-10.6 4-11.7 9.5-20.6 97.7-20.4 95.4-21 103.5-.2-1.2-.4-2.6-.7-4.3-.8-5.1.3.2-23.6-99.5-1.3-5.4-6.1-9.2-11.7-9.2h-13.3c-5.5 0-10.3 3.8-11.7 9.1-24.4 99-24 96.2-24.8 103.7-.1-1.1-.2-2.5-.5-4.2-.7-5.2-14.1-73.3-19.1-99-1.1-5.6-6-9.7-11.8-9.7h-16.8c-7.8 0-13.5 7.3-11.7 14.8 8 32.6 26.7 109.5 33.2 136 1.3 5.4 6.1 9.1 11.7 9.1h25.2c5.5 0 10.3-3.7 11.6-9.1l17.9-71.4c1.5-6.2 2.5-12 3-17.3l2.9 17.3c.1.4 12.6 50.5 17.9 71.4 1.3 5.3 6.1 9.1 11.6 9.1h24.7c5.5 0 10.3-3.7 11.6-9.1 20.8-81.9 30.2-119 34.5-136 1.9-7.6-3.8-14.9-11.6-14.9h-15.8z"></path>
+                </svg>
+            </a>
+        </div>
+
+    </section> <!-- Resume Section End-->
+
+    <section id="FirstDraft" class="section-body">
+        <div class="row">
+            <div class="twelve columns">
+                <h1 class="heading">Constitutional Analysis of Proposed Legislation</h1>
+                <p class="add-bottom">
+                    Many people ask whether the proposed legislation is constitutionally valid. The short answer is that
+                    it is impossible to predict with certainty the outcome of hypothetical litigation. However, in
+                    litigation challenging the constitutionality of the proposed legislation, most courts would probably
+                    rule against the plaintiffs.
+                </p>
+            </div>
+        </div> <!-- Row End-->
+        <div class="row columns link-container">
+            <a href="https://docs.google.com/uc?export=download&id=1v_qtE4xzuXlCAMIpTM60RNG9pC0l4N4T" download>
+                A detailed constitutional analysis of the proposed legislation in PDF format
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="file-pdf"
+                     class="svg-inline--fa fa-file-pdf fa-w-12" role="img" viewBox="0 0 384 512">
+                    <path fill="currentColor"
+                          d="M181.9 256.1c-5-16-4.9-46.9-2-46.9 8.4 0 7.6 36.9 2 46.9zm-1.7 47.2c-7.7 20.2-17.3 43.3-28.4 62.7 18.3-7 39-17.2 62.9-21.9-12.7-9.6-24.9-23.4-34.5-40.8zM86.1 428.1c0 .8 13.2-5.4 34.9-40.2-6.7 6.3-29.1 24.5-34.9 40.2zM248 160h136v328c0 13.3-10.7 24-24 24H24c-13.3 0-24-10.7-24-24V24C0 10.7 10.7 0 24 0h200v136c0 13.2 10.8 24 24 24zm-8 171.8c-20-12.2-33.3-29-42.7-53.8 4.5-18.5 11.6-46.6 6.2-64.2-4.7-29.4-42.4-26.5-47.8-6.8-5 18.3-.4 44.1 8.1 77-11.6 27.6-28.7 64.6-40.8 85.8-.1 0-.1.1-.2.1-27.1 13.9-73.6 44.5-54.5 68 5.6 6.9 16 10 21.5 10 17.9 0 35.7-18 61.1-61.8 25.8-8.5 54.1-19.1 79-23.2 21.7 11.8 47.1 19.5 64 19.5 29.2 0 31.2-32 19.7-43.4-13.9-13.6-54.3-9.7-73.6-7.2zM377 105L279 7c-4.5-4.5-10.6-7-17-7h-6v128h128v-6.1c0-6.3-2.5-12.4-7-16.9zm-74.1 255.3c4.1-2.7-2.5-11.9-42.8-9 37.1 15.8 42.8 9 42.8 9z"></path>
+                </svg>
+            </a>
+            <a href="https://docs.google.com/uc?export=download&id=1g1Ur_NP6zZ5HQHaV891gNWqAPyT6beXP"
+               download>A detailed constitutional analysis of the proposed legislation in Word format
+                <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="file-word"
+                     class="svg-inline--fa fa-file-word fa-w-12" role="img" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 384 512">
+                    <path fill="currentColor"
+                          d="M369.9 97.9L286 14C277 5 264.8-.1 252.1-.1H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V131.9c0-12.7-5.1-25-14.1-34zM332.1 128H256V51.9l76.1 76.1zM48 464V48h160v104c0 13.3 10.7 24 24 24h104v288H48zm220.1-208c-5.7 0-10.6 4-11.7 9.5-20.6 97.7-20.4 95.4-21 103.5-.2-1.2-.4-2.6-.7-4.3-.8-5.1.3.2-23.6-99.5-1.3-5.4-6.1-9.2-11.7-9.2h-13.3c-5.5 0-10.3 3.8-11.7 9.1-24.4 99-24 96.2-24.8 103.7-.1-1.1-.2-2.5-.5-4.2-.7-5.2-14.1-73.3-19.1-99-1.1-5.6-6-9.7-11.8-9.7h-16.8c-7.8 0-13.5 7.3-11.7 14.8 8 32.6 26.7 109.5 33.2 136 1.3 5.4 6.1 9.1 11.7 9.1h25.2c5.5 0 10.3-3.7 11.6-9.1l17.9-71.4c1.5-6.2 2.5-12 3-17.3l2.9 17.3c.1.4 12.6 50.5 17.9 71.4 1.3 5.3 6.1 9.1 11.6 9.1h24.7c5.5 0 10.3-3.7 11.6-9.1 20.8-81.9 30.2-119 34.5-136 1.9-7.6-3.8-14.9-11.6-14.9h-15.8z"></path>
+                </svg>
+            </a>
+        </div>
+    </section> <!-- Resume Section End-->
+
+    <section id="Endorsements" class="section-body">
+
+        <div class="row add-bottom">
+
+            <div class="twelve columns">
+
+                <h1 class="heading">Individuals who Endorse the Proposed Legislation</h1>
+
+                <p class="endorse-msg add-bottom">
+                    The individuals identified below have endorsed the proposed legislation.
+                    In this context, "endorsement" does not mean that they agree with every
+                    clause in the draft legislation. It means they agree that legislation similar
+                    to the draft statute:
+                <ul class="endorse">
+                    <li class="endorse-li">It would help protect American democracy from the threat
+                        posed by electronic amplification of lies and misinformation
+                    </li>
+                    <li class="endorse-li"> And that courts
+                        should find that such legislation is constitutionally valid.
+                    </li>
+                </ul>
+                </p>
+
+                <hr>
+
+            </div>
+
+        </div> <!-- Row End-->
+
+        <div class="row add-bottom">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Institutional affiliation</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Professor</td>
+                    <td>Mark Otto xnahuk</td>
+                    <td>Santa Clara University</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Doctor</td>
+                    <td>Jacob Thornton</td>
+                    <td>San Jose State University</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Doctor</td>
+                    <td>Patric the Bird</td>
+                    <td>San Jose State University</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div> <!-- Row End-->
+
+    </section> <!-- Resume Section End-->
+
+    <section id="faq" class="section-body">
+
+        <div class="row add-bottom">
+
+            <div class="twelve columns">
+
+                <h1 class="heading">Frequently Asked Questions</h1>
+                <div class="faq-container">
+
+                    <ol>
+                        <li id="faq_1">
+                            <div class="faq-question">
+                                <i class="fa fa-plus-circle expand" id="icon_1" onclick="toggleDisplay(1)"></i>
+                                <p class="ques-text"><b class="solution-bold">Contrary to popular belief, Lorem Ipsum is
+                                    not simply random
+                                    text</b></p>
+                            </div>
+                            <div>
+                                <p class="hidden-answer" id="answer_1">It has roots in a piece of classical Latin
+                                    literature
+                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                                    classical literature, discovered the undoubtable source.</p>
+                            </div>
+                            <hr/>
+
+                        </li>
+                        <li id="faq_2">
+                            <div class="faq-question">
+                                <i class="fa fa-plus-circle expand" id="icon_2" onclick="toggleDisplay(2)"></i>
+                                <p class="ques-text">
+                                    <b class="solution-bold">Popular Contrary to belief, Lorem Ipsum is not simply
+                                        random
+                                        text</b>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="hidden-answer" id="answer_2">It has roots in a piece of classical Latin
+                                    literature
+                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                                    classical literature, discovered the undoubtable source.</p>
+                            </div>
+                            <hr/>
+
+                        </li>
+                        <li id="faq_3">
+                            <div class="faq-question">
+                                <i class="fa fa-plus-circle expand" id="icon_3" onclick="toggleDisplay(3)"></i>
+                                <p class="ques-text">
+                                    <b class="solution-bold">Popular Contrary to belief, Lorem Ipsum is not simply
+                                        random
+                                        text</b>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="hidden-answer" id="answer_3">It has roots in a piece of classical Latin
+                                    literature
+                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                                    classical literature, discovered the undoubtable source.</p>
+                            </div>
+                            <hr/>
+
+                        </li>
+                        <li id="faq_4">
+                            <div class="faq-question">
+                                <i class="fa fa-plus-circle expand" id="icon_4" onclick="toggleDisplay(4)"></i>
+                                <p class="ques-text">
+                                    <b class="solution-bold">Popular Contrary to belief, Lorem Ipsum is not simply
+                                        random
+                                        text</b>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="hidden-answer" id="answer_4">It has roots in a piece of classical Latin
+                                    literature
+                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                                    classical literature, discovered the undoubtable source.</p>
+                            </div>
+                            <hr/>
+
+                        </li>
+                        <li id="faq_5">
+                            <div class="faq-question">
+                                <i class="fa fa-plus-circle expand" id="icon_5" onclick="toggleDisplay(4)"></i>
+                                <p class="ques-text">
+                                    <b class="solution-bold">Popular Contrary to belief, Lorem Ipsum is not simply
+                                        random
+                                        text</b>
+                                </p>
+                            </div>
+                            <div>
+                                <p class="hidden-answer" id="answer_5">It has roots in a piece of classical Latin
+                                    literature
+                                    from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
+                                    Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+                                    consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
+                                    classical literature, discovered the undoubtable source.</p>
+                            </div>
+                            <hr/>
+
+                        </li>
+                    </ol>
+                </div>
+
+
+            </div>
+
+        </div> <!-- Row End-->
+
+    </section> <!-- Resume Section End-->
+
 </div>
 
-<div>
-    <button onclick="s3upload()">Submit</button>
-</div>
 
-<progress max=”100” value=”0”></progress>
+<!-- Java Script
+================================================== -->
+<script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/index.js"></script>
 
-<script type="text/javascript">
-
-    function s3upload() {
-        var files = document.getElementById('fileUpload').files;
-        if (files)
-        {
-            var file = files[0];
-            var fileName = file.name;
-            var filePath = 'my-first-bucket-path/' + fileName;
-            var fileUrl = 'https://' + BUCKET_REGION + '.amazonaws.com/my-first-bucket/' +  filePath;
-
-            s3.upload({
-                Key: filePath,
-                Body: file,
-                ACL: 'public-read'
-            }, function(err, data) {
-                if(err) {
-                    reject('error');
-                }
-
-                alert('Successfully Uploaded!');
-            }).on('httpUploadProgress', function (progress) {
-                var uploaded = parseInt((progress.loaded * 100) / progress.total);
-                $("progress").attr('value', uploaded);
-            });
-        }
-    };
-</script>
 </body>
+
 </html>

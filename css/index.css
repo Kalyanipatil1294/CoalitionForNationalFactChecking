@@ -155,7 +155,7 @@ table {
     margin: 0 auto;
 }
 th {
-    padding: 20px;
+    padding: 20px 60px;
 }
 li {
     line-height: 2;
@@ -176,4 +176,22 @@ li {
 .faq-container {
     margin: 25px auto;
     width: 75%;
+}
+.expand {
+    cursor: pointer;
+}
+.endorse {
+    list-style: inside;
+    margin-left: 50px;
+    text-align: initial;
+}
+.endorse-msg {
+    text-align: initial;
+}
+.endorse-li {
+    line-height: 1;
+}
+.overview-accomplish {
+    padding: 0;
+    text-align: justify;
 }

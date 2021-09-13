@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
     }
 
     function handleLinkChange(hash) {
-        const target = hash;
+        const target = hash || "#overview";
         window.location.hash = target;
 
         $("section").removeClass("active-section");
