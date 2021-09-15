@@ -81,7 +81,6 @@ b {
 .quotes {
     width: 35%;
     padding: 20px 0;
-    font-family: 'librebaskerville-italic', serif;
 }
 .para-quotes {
     font-size: 18px;
@@ -117,6 +116,7 @@ b {
     color: #11ABB0;
     font-weight: bolder;
     margin-bottom: 0;
+    font-family: 'librebaskerville-italic', serif;
 }
 .links-section {
     display: flex;
@@ -162,7 +162,7 @@ th {
     padding: 20px 60px;
 }
 li {
-    line-height: 1.5;
+    line-height: 1.8;
 }
 .hidden-answer {
     display: none;
@@ -203,6 +203,15 @@ li {
 .author-names {
     text-align: right;
     margin: 0 10px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.name {
+    font-weight: bold;
+    font-size: 18px;
+}
+.email-text {
+    font-weight: normal;
 }
 .info-icon {
     width: 150px;
@@ -314,6 +323,9 @@ ul#nav li.current a { color: #F06000; }
 }
 .image-text-section {
     flex: 2;
+}
+.no-intent {
+    text-indent: 0;
 }
 
 
