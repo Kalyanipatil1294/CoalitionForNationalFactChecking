@@ -143,7 +143,7 @@ svg {
     font-size: 50px;
 }
 .side-image {
-    width: 400px;
+    width: inherit;
 }
 
 .link-container {
@@ -313,7 +313,7 @@ ul#nav li.current a { color: #F06000; }
     display: flex;
 }
 .image-section {
-    flex: 1;
+    flex: 1.3;
     padding-right: 20px;
 }
 
