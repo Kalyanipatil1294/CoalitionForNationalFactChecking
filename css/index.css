@@ -306,6 +306,7 @@ ul#nav li {
 }
 
 .add-bottom { margin-bottom: 24px !important; }
+.extra-bottom { margin-bottom: 30px !important; }
 
 ul#nav li a:active { background-color: transparent !important; }
 ul#nav li.current a { color: #F06000; }
