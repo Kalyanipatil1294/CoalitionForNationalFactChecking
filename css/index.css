@@ -35,7 +35,7 @@ body {
     text-align: justify;
     height: fit-content;
     margin-right: 40px;
-    flex: 2.9;
+    flex: 2.7;
 }
 .overview-content {
     flex: 5.25;
@@ -306,6 +306,7 @@ ul#nav li {
 }
 
 .add-bottom { margin-bottom: 24px !important; }
+.add-bottom-2 { margin-bottom: 15px }
 .extra-bottom { margin-bottom: 30px !important; }
 
 ul#nav li a:active { background-color: transparent !important; }
